@@ -43,9 +43,4 @@ sysinfo.txt
 /Logs
 /AndroidProject
 Assets/IgnorePath*
-.idea/.idea.MatchTriple3D-Unity/.idea/contentModel.xml
-.idea/.idea.MatchTriple3D-Unity/.idea/workspace.xml
-.idea/.idea.MatchTriple3D-Unity/.idea/indexLayout.xml
-.idea/.idea.MatchTriple3D-Unity/.idea/riderModule.iml
-.idea/.idea.MatchTriple3D-Unity/.idea/vcs.xml
-CatlikeCoding-Unity/.idea/.idea.CatlikeCoding-Unity/.idea/encodings.xml
+CatlikeCoding-Unity/.idea*
