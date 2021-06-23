@@ -9,6 +9,7 @@ public class Graph : MonoBehaviour
 
     //必须在10-100之间
     [SerializeField, Range(10, 100)] private int resolution = 10;
+    [SerializeField, Range(0, 2)] private int function;
 
     Transform[] points;
 
@@ -36,7 +37,19 @@ public class Graph : MonoBehaviour
         {
             var p = points[i];
             Vector3 pos = p.localPosition;
-            pos.y = Mathf.Sin(Mathf.PI * pos.x + time);
+            if (function == 0)
+            {
+                pos.y = FunctionLibrary.Wave(pos.x, time);
+            }
+            else if (function == 1)
+            {
+                pos.y = FunctionLibrary.MultiWave(pos.x, time);
+            }
+            else
+            {
+                pos.y = FunctionLibrary.Ripple(pos.x, time);
+            }
+
             p.localPosition = pos;
         }
     }
