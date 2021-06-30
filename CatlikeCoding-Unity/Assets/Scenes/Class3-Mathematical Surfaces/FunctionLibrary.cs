@@ -5,7 +5,7 @@ using static UnityEngine.Mathf; //use static之后 不需要加类名 直接使�
 
 public static class FunctionLibrary
 {
-    public delegate float Function(float x, float t);
+    public delegate float Function(float x, float z, float t);
     public enum FunctionName {Wave, MultiWave, Ripple};
 
     private static Function[] functions = {Wave, MultiWave, Ripple};
@@ -15,19 +15,19 @@ public static class FunctionLibrary
         return functions[(int)name];
     }
 
-    public static float Wave(float x, float t)
+    public static float Wave(float x,float z, float t)
     {
         return Sin(PI * (x + t));
     }
 
-    public static float MultiWave(float x, float t)
+    public static float MultiWave(float x,float z, float t)
     {
         float y = Sin(PI * (x + 0.5f * t));
         y += 0.5f * Sin(2f * PI * (x + t));
         return y * (2f / 3f);
     }
 
-    public static float Ripple(float x, float t)
+    public static float Ripple(float x,float z, float t)
     {
         float d = Abs(x);
         float y = Sin(PI * (4f * d - t));
