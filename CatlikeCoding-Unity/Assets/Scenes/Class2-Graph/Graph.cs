@@ -32,25 +32,14 @@ public class Graph : MonoBehaviour
 
     private void Update()
     {
+        FunctionLibrary.Function f = FunctionLibrary.GetFunction(function);
         float time = Time.time;
         for (int i = 0; i < points.Length; i++)
         {
-            var p = points[i];
-            Vector3 pos = p.localPosition;
-            if (function == 0)
-            {
-                pos.y = FunctionLibrary.Wave(pos.x, time);
-            }
-            else if (function == 1)
-            {
-                pos.y = FunctionLibrary.MultiWave(pos.x, time);
-            }
-            else
-            {
-                pos.y = FunctionLibrary.Ripple(pos.x, time);
-            }
-
-            p.localPosition = pos;
+            var point = points[i];
+            Vector3 position = point.localPosition;
+            position.y = f(position.x, time);
+            point.localPosition = position;
         }
     }
 }

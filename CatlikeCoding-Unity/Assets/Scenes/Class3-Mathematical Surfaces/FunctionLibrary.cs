@@ -5,6 +5,15 @@ using static UnityEngine.Mathf; //use static之后 不需要加类名 直接使�
 
 public static class FunctionLibrary
 {
+    public delegate float Function(float x, float t);
+
+    private static Function[] functions = {Wave, MultiWave, Ripple};
+
+    public static Function GetFunction(int index)
+    {
+        return functions[index];
+    }
+
     public static float Wave(float x, float t)
     {
         return Sin(PI * (x + t));
