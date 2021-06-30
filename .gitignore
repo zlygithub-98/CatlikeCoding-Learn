@@ -44,3 +44,5 @@ sysinfo.txt
 /AndroidProject
 Assets/IgnorePath*
 CatlikeCoding-Unity/.idea*
+CatlikeCoding-Unity/Library*
+CatlikeCoding-Unity/Library/*
